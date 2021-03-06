@@ -1,0 +1,33 @@
+doctype html
+html(lang='en')
+    head
+        meta(charset='UTF-8')
+        meta(http-equiv='X-UA-Compatible', content='IE=edge')
+        meta(name='viewport', content='width=device-width, initial-scale=1.0')
+        title Youtube Video Downloader
+        link(rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css' integrity='sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l' crossorigin='anonymous')
+        link(rel='stylesheet', href='/public/css/style.css')
+    body
+        div.container.py-3
+            .row.my-3
+                .col.col-12.text-center
+                    h2 Youtube Video Downloader
+                    p Paste the youtube link below
+            form#download.row(autocomplete='off')
+                .col.col-md-10
+                    .form-group
+                        input.form-control(type='text' placeholder='Paste link here' name='url' value='https://youtube.com/')
+                .col.col-md-2
+                    button.btn.btn-primary.btn-block(type='submit') Search
+            .row.justify-content-center.row-result.mx-0
+                .col.col-md-4.pl-0
+                    img.video-image(src="#", alt="video" width="100%")
+                .col.col-md-8.pr-0
+                    h5.video-title Title
+                    div.video-time.mt-3.mb-4
+                        span Time
+                    a.btn.btn-primary.btn-download(href='#') Download Video
+        script(src='https://unpkg.com/axios/dist/axios.min.js')
+        script(src='https://code.jquery.com/jquery-3.5.1.slim.min.js' integrity='sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj' crossorigin='anonymous')
+        script(src='https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js' integrity='sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns' crossorigin='anonymous')
+        script(src='/public/js/main.js') 

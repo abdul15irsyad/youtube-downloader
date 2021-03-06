@@ -1,0 +1,21 @@
+body{
+    padding: 50px 10px;
+}
+
+.row-result{
+    background-color: #f5f5f5;
+    border-radius: 4px;
+    display: none;
+    padding: 1rem;
+}
+
+.row-result .video-image{
+    border-radius: 4px;
+}
+
+.row-result .video-time span{
+    background-color: rgb(85, 85, 85);
+    border-radius: 3px;
+    color: #fff;
+    padding: 2px 4px;
+}
