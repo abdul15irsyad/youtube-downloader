@@ -11,7 +11,7 @@ git clone https://github.com/abdul15irsyad/live-chat-app.git
 cd live-chat-app
 npm install
 ```
-2. after all the existing dependecies installed then run the application with the 'npm start'
+2. after all the existing dependecies installed then run the application with the `npm start`
 ```terminal
 npm start
 ```

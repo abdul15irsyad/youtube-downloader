@@ -7,16 +7,13 @@ document.addEventListener('DOMContentLoaded', () => {
         if (response.data.status) {
             let { thumbnails, title, lengthSeconds } = response.data.data
             let time = convertSeconds(lengthSeconds)
-            console.log({ thumbnails, title, time })
             let downloadLink = `/download?url=${url.value}`
             renderResult({ thumbnail: thumbnails[3].url, title, time, downloadLink })
         } else {
             console.log(response.data)
         }
     })
-    url.addEventListener('focus', e => {
-        url.select()
-    })
+    url.addEventListener('focus', e => { url.select() })
 })
 
 let renderResult = ({ thumbnail, title, time, downloadLink }) => {
