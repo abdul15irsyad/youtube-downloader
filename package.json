@@ -4,6 +4,8 @@
   "description": "youtube video downloader",
   "main": "app.js",
   "scripts": {
+    "lambda-serve": "netlify-lambda serve src",
+    "lambda-build": "netlify-lambda build src",
     "start": "node app.js",
     "dev": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"

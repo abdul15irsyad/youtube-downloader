@@ -12,12 +12,13 @@ app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 
 const PORT = process.env.PORT || '3000'
+const router = express.Router()
 
-app.get('/', (req, res) => {
+router.get('/', (req, res) => {
     res.render('index')
 })
 
-app.post('/search', (req, res) => {
+router.post('/search', (req, res) => {
     let { url } = req.body
     ytdl.getBasicInfo(url)
         .then(response => {
@@ -33,11 +34,13 @@ app.post('/search', (req, res) => {
         })
 })
 
-app.get('/download', async (req, res) => {
+router.get('/download', async (req, res) => {
     let { url } = req.query
     let info = await ytdl.getBasicInfo(url)
     res.header('Content-Disposition', `attachment;filename="${info.videoDetails.title}.mp4"`)
     ytdl(url, { format: 'mp4' }).pipe(res);
 })
+
+app.use('/', router)
 
 app.listen(PORT, () => console.log(`server running on port ${PORT}`))
